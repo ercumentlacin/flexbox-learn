@@ -6,25 +6,35 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import * as prism from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-function Markdown({ markdownText, type, children: child }) {
-  if (!type) {
-    return <ReactMarkdown>{ child }</ReactMarkdown>;
+function Markdown({ markdownText, type }) {
+  if (type) {
+    return (
+      <SyntaxHighlighter
+        children={markdownText}
+        style={prism.dracula}
+        language={type}
+      />
+    );
   }
 
   return (
     <ReactMarkdown
-      children={`~~~css\n ${markdownText}`}
+      children={markdownText}
       components={{
         code({
           node, inline, className, children, ...props
         }) {
-          return !inline ? (
+          console.log({
+            node, inline, className, children: type ? type + children : children, ...props,
+          });
+          const match = /language-(\w+)/.exec(className || '');
+
+          return !inline && match ? (
             <SyntaxHighlighter
               children={String(children).replace(/\n$/, '')}
               style={prism.dracula}
-              language="css"
-              startingLineNumber={node.position.start.line}
-              {...props}
+              language={match[1]}
+              PreTag="div"
             />
           ) : (
             <code className={className} {...props}>
@@ -38,15 +48,12 @@ function Markdown({ markdownText, type, children: child }) {
 }
 
 Markdown.propTypes = {
-  markdownText: PropTypes.string,
+  markdownText: PropTypes.string.isRequired,
   type: PropTypes.string,
-  children: PropTypes.node,
 };
 
 Markdown.defaultProps = {
   type: '',
-  children: null,
-  markdownText: '',
 };
 
 export default Markdown;

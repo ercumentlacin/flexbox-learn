@@ -12,11 +12,15 @@
   @apply text-sm leading-6;
 }
 
-:where(.description, .question) code {
+:where(.description, .question) code:not([class*="language-"]) {
   @apply bg-zinc-700;
   @apply text-orange-500 border border-orange-500;
   @apply p-1 rounded-md;
   @apply text-xs;
+}
+
+:where(.description, .question) ul {
+  @apply list-disc pl-8;
 }
 
 .content, .answer {

@@ -14,12 +14,14 @@ export default function Learn() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isCorrect, setIsCorrect] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isReadOnly, setIsReadOnly] = useState(false);
 
   const onChangeSuccess = useCallback((val) => setIsCorrect(val), []);
   const onChangeError = useCallback((val) => setIsError(val), []);
+  const onChangeReadOnly = useCallback((val) => setIsReadOnly(val), []);
 
   const onNextstep = () => {
-    if (isCorrect) {
+    if (isCorrect || isReadOnly) {
       return setCurrentStep((prev) => prev + 1);
     }
     return setIsError(true);
@@ -28,7 +30,10 @@ export default function Learn() {
   const onPreviousStep = () => setCurrentStep(currentStep - 1);
 
   const isDisablePreviousStep = useMemo(() => currentStep === 1, [currentStep]);
-  const isDisableNextStep = useMemo(() => currentStep === chapterList.length, [currentStep]);
+  const isDisableNextStep = useMemo(
+    () => (currentStep === chapterList.length),
+    [currentStep],
+  );
 
   useEffect(() => {
     let isCancelled;
@@ -41,6 +46,12 @@ export default function Learn() {
       clearTimeout(isCancelled);
     };
   }, [isError]);
+
+  useEffect(() => {
+    if (isReadOnly) {
+      setIsCorrect(true);
+    }
+  }, [isReadOnly]);
 
   return (
     <div className={styles.learnWrapper}>
@@ -60,6 +71,7 @@ export default function Learn() {
               onChangeError={onChangeError}
               isCorrect={isCorrect}
               isError={isError}
+              onChangeReadOnly={onChangeReadOnly}
             />
           ))
       }
