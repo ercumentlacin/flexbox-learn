@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  @apply bg-zinc-900 text-white font-mono font-normal;
+}
+
+#root {
+  @apply flex flex-col min-h-screen;
+}
+
+div.box {
+  @apply w-20 h-20 p-2 border-2 border-black;
+  @apply text-center my-2 mr-2;
+}
+
+div.box-1 {
+  @apply bg-yellow-500;
+}
+
+div.box-2 {
+  @apply bg-red-900;
+}

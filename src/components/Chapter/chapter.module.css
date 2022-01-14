@@ -1,0 +1,67 @@
+.cahpterWrapper {
+  @apply flex-1 flex flex-col items-center justify-center;
+}
+.cahpterWrapper h1 {
+  @apply text-3xl text-center;
+  @apply mb-4;
+}
+
+.cahpterWrapper :where(.description, .question) {
+  @apply p-4 rounded-md bg-zinc-800;
+  @apply mb-4;
+  @apply text-sm leading-6;
+}
+
+:where(.description, .question) code {
+  @apply bg-zinc-700;
+  @apply text-orange-500 border border-orange-500;
+  @apply p-1 rounded-md;
+  @apply text-xs;
+}
+
+.content, .answer {
+  @apply px-2 pb-3 pt-5 rounded-md bg-zinc-800;
+  @apply w-full mb-4;
+  @apply relative
+}
+
+:where(.content, .answer) .subTitle {
+  @apply absolute -top-2.5 left-2.5 p-1;
+  @apply text-[10px] border border-zinc-800 rounded-md;
+  @apply bg-zinc-700 text-zinc-400;
+}
+
+.answer {
+  @apply flex flex-col items-center space-y-3;
+}
+
+.answer .textArea {
+  @apply  mt-1 block w-full rounded-md bg-zinc-500 text-zinc-900 border-transparent p-2;
+  @apply focus:bg-zinc-900 focus:ring-0 focus:outline focus:outline-orange-600 focus:text-zinc-200;
+}
+
+.textArea.correct {
+  @apply border border-green-500 focus:outline-none;
+}
+
+.editor {
+  @apply w-full;
+  @apply flex flex-col space-y-4;
+  @apply sm:space-y-[0px] sm:flex-row sm:justify-around;
+}
+
+.editor > * {
+  @apply flex-1 max-w-sm;
+}
+
+.answerButton {
+  @apply flex flex-col items-center space-y-1 my-6 !important;
+  @apply text-sm;
+}
+
+.answerButton .kdb {
+  @apply bg-zinc-700 text-zinc-400;
+  @apply px-2 py-1 rounded-md;
+  @apply text-xs;
+  @apply space-x-1
+}

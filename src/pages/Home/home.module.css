@@ -1,0 +1,41 @@
+.homePage {
+  @apply flex flex-col w-full h-full flex-1;
+}
+
+.section {
+  @apply flex-1 space-x-4;
+  @apply flex flex-col justify-center;
+  @apply sm:flex-row sm:justify-start sm:items-center;
+}
+
+.info {
+  @apply space-y-4;
+}
+
+.info h1 {
+  @apply text-4xl font-bold;
+}
+
+.info p {
+  @apply leading-5 break-words antialiased;
+  @apply text-xl font-sans;
+}
+
+.iconWrapper {
+  @apply relative;
+  @apply hidden md:inline-flex;
+}
+
+.icon {
+  @apply inline-flex w-72 max-w-[10rem] aspect-square sm:aspect-[5/9];
+}
+
+.icon:after  {
+  @apply absolute inline-flex w-72 max-w-[10rem] bg-no-repeat aspect-square bg-contain sm:aspect-[5/9] sm:bg-cover;
+  content: '';
+
+  /* Using the background-image and
+     its related properties to add
+     the SVG content */
+  background-image: url('../../assets/svg/character 8.svg');
+}

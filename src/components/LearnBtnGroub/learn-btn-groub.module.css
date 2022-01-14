@@ -1,0 +1,33 @@
+.buttonGroub {
+  @apply space-x-4;
+}
+
+.button {
+  @apply bg-zinc-800 text-zinc-400 font-bold py-2 px-4 rounded-lg;
+  @apply hover:bg-zinc-700 border border-transparent;
+}
+
+@keyframes shake {
+  0%, 20%, 40%, 60%, 80% {
+    transform: translateX(8px);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-8px);
+  }
+}
+
+.button.error {
+  @apply border border-red-600;
+  animation-name: shake;
+  animation-duration: 0.7s, 0.35s;
+  animation-iteration-count: 1, 2;
+}
+
+.button.correct {
+  @apply animate-bounce;
+  @apply border border-green-500;
+}

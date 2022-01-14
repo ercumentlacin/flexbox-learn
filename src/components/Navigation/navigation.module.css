@@ -1,0 +1,9 @@
+.nav {
+  @apply text-white;
+  @apply transition-all ease-in-out duration-300;
+  @apply hover:text-green-500;
+}
+
+.activeNav {
+  @apply text-green-500 underline underline-offset-4;
+}

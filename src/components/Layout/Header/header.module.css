@@ -1,0 +1,6 @@
+.header {
+  @apply flex justify-center w-full;
+  @apply py-4;
+  @apply sm:justify-end sm:px-4;
+  @apply md:max-w-4xl md:mx-auto;
+}
