@@ -9,7 +9,7 @@ import Box from '../Box';
 
 function Chapter(props) {
   const {
-    data, onChangeSuccess, onChangeError, isCorrect, isError,
+    data, onChangeSuccess, onChangeError, onChangeReadOnly, isCorrect, isError,
   } = props;
   const {
     answer, content, description, question, title, initialValue, readOnly,
@@ -36,6 +36,7 @@ function Chapter(props) {
   useEffect(() => {
     onChangeSuccess(false);
     onChangeError(false);
+    onChangeReadOnly(readOnly);
   }, []);
 
   // check answer is correct
@@ -103,9 +104,7 @@ function Chapter(props) {
       { !!description && (
         <div className={styles.description}>
           {/* {description} */}
-          <Markdown>
-            {description}
-          </Markdown>
+          <Markdown markdownText={description} />
         </div>
       )}
 
@@ -141,7 +140,7 @@ function Chapter(props) {
             className={textAreaClass}
             rows={6}
           />
-          <Markdown markdownText={inputValue} type="css" />
+          <Markdown markdownText={inputValue} type="language-css" />
         </div>
 
         <button type="button" onClick={handlleShowAnswer} className={styles.answerButton}>
@@ -156,7 +155,7 @@ function Chapter(props) {
         {
           isAnswerShow && (
             <div className={styles.answerContent}>
-              <Markdown markdownText={answer} />
+              <Markdown markdownText={answer} type="language-css" />
             </div>
           )
         }
@@ -178,6 +177,7 @@ Chapter.propTypes = {
   }).isRequired,
   onChangeSuccess: PropTypes.func.isRequired,
   onChangeError: PropTypes.func.isRequired,
+  onChangeReadOnly: PropTypes.func.isRequired,
   isCorrect: PropTypes.bool.isRequired,
   isError: PropTypes.bool.isRequired,
 };
