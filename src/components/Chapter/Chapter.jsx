@@ -17,6 +17,7 @@ function Chapter(props) {
 
   const [inputValue, setInputValue] = useState(initialValue);
   const [isAnswerShow, setIsAnswerShow] = useState(false);
+  const [containerStyle, setContainerStyle] = useState({});
 
   const inputRef = useRef(null);
 
@@ -61,7 +62,8 @@ function Chapter(props) {
     };
   }, []);
 
-  const containerStyle = useMemo(() => {
+  // set container style
+  useEffect(() => {
     const cssValues = inputValue
       .replace(/div.container\s+{/g, '')
       .replace(/}/g, '').replace(/\n/g, '');
@@ -73,7 +75,8 @@ function Chapter(props) {
       if (!key || !value) return;
       cssValuesObject[key.trim()] = value ? value.toString().trim() : '';
     });
-    return cssValuesObject;
+    // ! TODO: fix this bug
+    setContainerStyle(cssValuesObject);
   }, [inputValue]);
 
   const textAreaClass = useMemo(() => (
