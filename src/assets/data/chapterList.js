@@ -118,6 +118,45 @@ const chapterList = [
     step: 9,
     id: nanoid(),
   },
+  {
+    data: {
+      answer: 'div.box1 {\n  order: 5;\n} \ndiv.box2 {\n  order: 2;\n} \ndiv.box3 {\n  order: 3;\n} \ndiv.box4 {\n  order: 4;\n}',
+      content: 0,
+      description: '**order** ile özelliklere göz atalım. order alt (child) elementlerin (item) yönünü belirlemek için kullanılır. Özellik, varsayılan olarak (0) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    order: 1; \n}\n``` \n\n *   **0:** Esnek kutuların arasında boşluk bırakır\n*   **1:** Esnek kutuların arasında boşluk bırakır\n*   **2:** Esnek kutuların arasında boşluk bırakır\n*   **3:** Esnek kutuların arasında boşluk bırakır\n*   **4:** Esnek kutuların arasında boşluk bırakır',
+      question: 'Ilk kutunun en sonda ter almasi icin order değeri ne olmalıdır ?',
+      title: 'order',
+      initialValue: 'div.box1 {\n  order: 1;\n} \ndiv.box2 {\n  order: 2;\n} \ndiv.box3 {\n  order: 3;\n} \ndiv.box4 {\n  order: 4;\n}',
+      readOnly: false,
+    },
+    step: 10,
+    id: nanoid(),
+  },
+  {
+    data: {
+      answer: 'div.box1 {\n  flex-grow: 1;\n} \ndiv.box2 {\n  flex-grow: 2;\n} \ndiv.box3 {\n  flex-grow: 1;\n} \ndiv.box4 {\n  flex-grow: 1;\n}',
+      content: 0,
+      description: '**flex-grow** gerektiginde esnek bir ogenin uyume yetenegini tanimlar. Oranti islevi goren birimsiz bir deger kabul eder. \n Tum esnek ogelerin baslangis flex-grow degeri 1 olarak ayarlanmis olsada containerdaki doldurulamamis olan alan ogelere esit miktarda paylastirilir.\n\n```css\n.box {\n  flex-grow: 4; /* default 0 */\n}\n```',
+      question: 'Ikinci kutunun diger kutulara gore 2/5 kat daha fazla yer almasi icin flex-grow değeri ne olmalıdır ?',
+      title: 'flex-grow',
+      initialValue: 'div.box1 {\n  flex-grow: 1;\n} \ndiv.box2 {\n  flex-grow: 1;\n} \ndiv.box3 {\n  flex-grow: 1;\n} \ndiv.box4 {\n  flex-grow: 1;\n}',
+      readOnly: false,
+    },
+    step: 11,
+    id: nanoid(),
+  },
+  {
+    data: {
+      answer: 'div.box1 {\n  flex-shrink: 1;\n} \ndiv.box2 {\n  flex-shrink: 5;\n} \ndiv.box3 {\n  flex-shrink: 1;\n} \ndiv.box4 {\n  flex-shrink: 1;\n}',
+      content: 0,
+      description: '**flex-shrink** gerektiginde esnek bir öğenin gerektiğinde küçülme yeteneğini tanımlar. Oranti islevi goren birimsiz bir deger kabul eder. \n\n```css\n.box {\n  flex-shrink: 3; /* default 1 */\n}\n```',
+      question: 'Ikinci kutunun diger kutulara gore daha fazla kuculmesi icin flex-shrink degerini 5 yapiniz',
+      title: 'flex-shrink',
+      initialValue: 'div.box1 {\n  flex-shrink: 1;\n} \ndiv.box2 {\n  flex-shrink: 1;\n} \ndiv.box3 {\n  flex-shrink: 1;\n} \ndiv.box4 {\n  flex-shrink: 1;\n}',
+      readOnly: false,
+    },
+    step: 12,
+    id: nanoid(),
+  },
 ];
 
 export default chapterList;

@@ -7,6 +7,16 @@ import styles from './chapter.module.css';
 import Markdown from '../MarkDown';
 import Box from '../Box';
 
+import { createArray, getStyles, stringToStyleObject } from '../../helpers/utils';
+import FlexContainer from '../FlexContainer/FlexContainer';
+
+const INITIAL_STYLES = {
+  box1: {},
+  box2: {},
+  box3: {},
+  box4: {},
+};
+
 function Chapter(props) {
   const {
     data, onChangeSuccess, onChangeError, onChangeReadOnly, isCorrect, isError,
@@ -18,6 +28,9 @@ function Chapter(props) {
   const [inputValue, setInputValue] = useState(initialValue);
   const [isAnswerShow, setIsAnswerShow] = useState(false);
   const [containerStyle, setContainerStyle] = useState({});
+  const [{
+    box1, box2, box3, box4,
+  }, setAllStyles] = useState(INITIAL_STYLES);
 
   const inputRef = useRef(null);
 
@@ -31,6 +44,24 @@ function Chapter(props) {
       inputRef.current.focus();
     }
   }, []);
+
+  // set box styles
+  useEffect(() => {
+    if (inputValue?.match(/box1/g)?.length > 0) {
+      const re = /(div.box1 {\n {2}.*\n\})\s*.*(div.box2 {\n {2}.*\n})\s*.*(div.box3 {\n {2}.*\n})\s*.*(div.box4 {\n {2}.*\n})/g;
+      let [, box1_, box2_, box3_, box4_] = re.exec(inputValue);
+      box1_ = stringToStyleObject(getStyles(box1_));
+      box2_ = stringToStyleObject(getStyles(box2_));
+      box3_ = stringToStyleObject(getStyles(box3_));
+      box4_ = stringToStyleObject(getStyles(box4_));
+      setAllStyles({
+        box1: box1_,
+        box2: box2_,
+        box3: box3_,
+        box4: box4_,
+      });
+    }
+  }, [inputValue]);
 
   // isCorrect and isError should be false after render
   useEffect(() => {
@@ -89,14 +120,6 @@ function Chapter(props) {
     ].join(' ')
   ), [isCorrect, isError]);
 
-  const createArray = (arrayLength) => {
-    const array = [];
-    for (let i = 1; i <= arrayLength; i += 1) {
-      array.push(i);
-    }
-    return array;
-  };
-
   return (
     <div className={styles.cahpterWrapper}>
       <h1>{title}</h1>
@@ -122,11 +145,21 @@ function Chapter(props) {
           div.container
         </span>
 
-        <div style={containerStyle}>
-          {!!content && (
-            createArray(content).map((item) => <Box key={item} number={item} />)
-          )}
-        </div>
+        {!!content && (
+          <div style={containerStyle}>
+            {createArray(content).map((item) => <Box key={item} number={item} />)}
+          </div>
+        )}
+
+        {!content && (
+          <FlexContainer
+            box1={box1}
+            box2={box2}
+            box3={box3}
+            box4={box4}
+          />
+        )}
+
       </div>
 
       <div className={styles.answer}>

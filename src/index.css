@@ -27,3 +27,7 @@ div.box-2 {
 div.box-3 {
   @apply bg-green-500;
 }
+
+div.box-4 {
+  @apply bg-blue-500;
+}

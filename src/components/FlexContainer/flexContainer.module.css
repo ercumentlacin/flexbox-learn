@@ -1,0 +1,8 @@
+.flexContainer {
+  @apply flex flex-wrap gap-5;
+}
+
+.flexContainer > div {
+  @apply border-2  text-center p-2;
+  @apply border-black;
+}
