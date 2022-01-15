@@ -1,8 +1,8 @@
 .main {
   @apply flex flex-col flex-1 items-start w-full;
-  @apply py-4 px-8;
+  @apply py-4 px-2;
   @apply sm:px-4;
-  @apply md:max-w-4xl md:mx-auto;
+  @apply md:max-w-4xl md:mx-auto md:px-8;
 }
 
 .main > * {

@@ -29,12 +29,12 @@ const chapterList = [
   },
   {
     data: {
-      answer: 'div.container {\n  display: flex;\n}',
-      content: 2,
-      description: '**flex-direction** ile özelliklere göz atalım. flex-direction alt (child) elementlerin (item) yönünü belirlemek için kullanılır. Özellik, varsayılan olarak (row) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    flex-direction: row | row-reverse | column | column-reverse; \n}\n```',
-      question: '',
+      answer: 'div.container {\n  display: flex;\n  flex-direction: column;\n}',
+      content: 3,
+      description: '**flex-direction** ile özelliklere göz atalım. flex-direction alt (child) elementlerin (item) yönünü belirlemek için kullanılır. Özellik, varsayılan olarak (row) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    flex-direction: row | row-reverse | column | column-reverse; \n}\n``` \n\n *   **row:** Esnek kutuları soldan sağa sıralar\n*   **row-reverse:** Esnek kutuları sağdan sola sıralar\n*   **column:** Esnek kutuları kolon olarak yukarıdan aşağı sıralar\n*   **column-reverse:** Esnek kutuları row-reverse gibi ama alttan yukarı sıralar',
+      question: 'Esnek kutuları yukarıdan aşağı sıramak için flex-direction: değeri ne olmalıdır ?',
       title: 'flex-direction',
-      initialValue: 'div.container {\n  display: ;\n}',
+      initialValue: 'div.container {\n  display: flex;\n  flex-direction: ;\n}',
       readOnly: false,
     },
     step: 3,

@@ -110,6 +110,9 @@ function Chapter(props) {
 
       { !!question && (
         <div className={styles.question}>
+          <span className={styles.subTitle}>
+            soru
+          </span>
           {question}
         </div>
       )}

@@ -10,6 +10,7 @@
   @apply p-4 rounded-md bg-zinc-800;
   @apply mb-4;
   @apply text-sm leading-6;
+  @apply space-y-4
 }
 
 :where(.description, .question) code:not([class*="language-"]) {
@@ -17,26 +18,35 @@
   @apply text-orange-500 border border-orange-500;
   @apply p-1 rounded-md;
   @apply text-xs;
+  @apply inline-flex;
 }
 
 :where(.description, .question) ul {
-  @apply list-disc pl-8;
+  @apply list-disc pl-8 my-4;
 }
 
-.content, .answer {
+.description pre {
+  @apply max-w-[90vw] md:max-w-full;
+}
+
+.content, .answer, .question {
   @apply px-2 pb-3 pt-5 rounded-md bg-zinc-800;
   @apply w-full mb-4;
   @apply relative
 }
 
-:where(.content, .answer) .subTitle {
+:where(.content, .answer, .question) .subTitle {
   @apply absolute -top-2.5 left-2.5 p-1;
   @apply text-[10px] border border-zinc-800 rounded-md;
   @apply bg-zinc-700 text-zinc-400;
 }
 
-.answer {
+.answer, .question {
   @apply flex flex-col items-center space-y-3;
+}
+
+.question {
+  @apply items-start pt-7 pb-5;
 }
 
 .answer .textArea {

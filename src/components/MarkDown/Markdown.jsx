@@ -9,11 +9,9 @@ import * as prism from 'react-syntax-highlighter/dist/esm/styles/prism';
 function Markdown({ markdownText, type }) {
   if (type) {
     return (
-      <SyntaxHighlighter
-        children={markdownText}
-        style={prism.dracula}
-        language={type}
-      />
+      <SyntaxHighlighter language="css" style={prism.dracula}>
+        {markdownText}
+      </SyntaxHighlighter>
     );
   }
 
@@ -24,9 +22,6 @@ function Markdown({ markdownText, type }) {
         code({
           node, inline, className, children, ...props
         }) {
-          console.log({
-            node, inline, className, children: type ? type + children : children, ...props,
-          });
           const match = /language-(\w+)/.exec(className || '');
 
           return !inline && match ? (
