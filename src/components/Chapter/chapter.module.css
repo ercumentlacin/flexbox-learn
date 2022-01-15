@@ -34,14 +34,21 @@
   @apply list-disc pl-8 my-4;
 }
 
+.description pre {
+  width: min(52rem, 92vw);
+}
+:where(.description, .question) > *:not(ul) {
+  padding-inline: 1rem;
+}
+
 .content, .answer, .question {
-  @apply px-4 pb-3 pt-5 rounded-md bg-zinc-800;
+  @apply px-6 pb-3 pt-5 rounded-md bg-zinc-800;
   @apply w-full mb-4;
   @apply relative
 }
 
 :where(.content, .answer, .question) .subTitle {
-  @apply absolute -top-2.5 left-2.5 p-1;
+  @apply absolute -top-2.5 left-7 p-1;
   @apply text-[10px] border border-zinc-800 rounded-md;
   @apply bg-zinc-700 text-zinc-400;
 }
@@ -71,6 +78,8 @@
   @apply w-full;
   @apply flex flex-col space-y-4;
   @apply sm:space-y-[0px] sm:flex-row sm:justify-around;
+  @apply px-4 space-x-4;
+
 }
 
 .editor > * {
