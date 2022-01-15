@@ -1,9 +1,18 @@
 .cahpterWrapper {
   @apply flex-1 flex flex-col items-center justify-center;
+  @apply px-1;
 }
 .cahpterWrapper h1 {
   @apply text-3xl text-center;
   @apply mb-4;
+}
+
+.cahpterWrapper strong {
+  @apply underline decoration-green-500 underline-offset-1;
+}
+
+.cahpterWrapper pre {
+  @apply max-w-[90vw] md:max-w-full;
 }
 
 .cahpterWrapper :where(.description, .question) {
@@ -25,12 +34,8 @@
   @apply list-disc pl-8 my-4;
 }
 
-.description pre {
-  @apply max-w-[90vw] md:max-w-full;
-}
-
 .content, .answer, .question {
-  @apply px-2 pb-3 pt-5 rounded-md bg-zinc-800;
+  @apply px-4 pb-3 pt-5 rounded-md bg-zinc-800;
   @apply w-full mb-4;
   @apply relative
 }
@@ -52,6 +57,10 @@
 .answer .textArea {
   @apply  mt-1 block w-full rounded-md bg-zinc-500 text-zinc-900 border-transparent p-2;
   @apply focus:bg-zinc-900 focus:ring-0 focus:outline focus:outline-orange-600 focus:text-zinc-200;
+}
+
+.content {
+  width: min(52rem, 92vw);
 }
 
 .textArea.correct {

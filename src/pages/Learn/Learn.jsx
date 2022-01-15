@@ -9,6 +9,7 @@ import LearnBtnGroub from '../../components/LearnBtnGroub';
 import chapterList from '../../assets/data/chapterList';
 
 import styles from './learn.module.css';
+import { navigateTop } from '../../helpers/utils';
 
 export default function Learn() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -22,12 +23,16 @@ export default function Learn() {
 
   const onNextstep = () => {
     if (isCorrect || isReadOnly) {
-      return setCurrentStep((prev) => prev + 1);
+      setCurrentStep((prev) => prev + 1);
+      return navigateTop();
     }
     return setIsError(true);
   };
 
-  const onPreviousStep = () => setCurrentStep(currentStep - 1);
+  const onPreviousStep = () => {
+    setCurrentStep(currentStep - 1);
+    return navigateTop();
+  };
 
   const isDisablePreviousStep = useMemo(() => currentStep === 1, [currentStep]);
   const isDisableNextStep = useMemo(
