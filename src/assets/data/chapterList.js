@@ -157,6 +157,54 @@ const chapterList = [
     step: 12,
     id: nanoid(),
   },
+  {
+    data: {
+      answer: 'div.box1 {\n  flex-basis: 100px;\n} \ndiv.box2 {\n  flex-basis: 500px;\n} \ndiv.box3 {\n  flex-basis: 100px;\n} \ndiv.box4 {\n  flex-basis: 100px;\n}',
+      content: 0,
+      description: '**flex-basis** doldurulmayan alan dagiltilmadan once ogrenin varsayılan boyutunu belirler. Bir uzunluk (ör. %20, 5rem vb.) veya bir anahtar kelime olabilir. \n\n ```css\n.box {\n  flex-basis: 20%; /* default auto */\n}\n```',
+      question: 'Ikinci kutunun maksimum boyutunu 500px olabilmesi icin flex-basis degerini 500px yapiniz.',
+      title: 'flex-basis',
+      initialValue: 'div.box1 {\n  flex-basis: 100px;\n} \ndiv.box2 {\n  flex-basis: 100px;\n} \ndiv.box3 {\n  flex-basis: 100px;\n} \ndiv.box4 {\n  flex-basis: 100px;\n}',
+      readOnly: false,
+    },
+    step: 13,
+    id: nanoid(),
+  },
+  {
+    data: {
+      answer: 'div.box1 {\n  flex: 1;\n} \ndiv.box2 {\n  flex: 5;\n} \ndiv.box3 {\n  flex: 1;\n} \ndiv.box4 {\n  flex: 1;\n}',
+      content: 0,
+      description: "**flex** flex-grow, flex-shrink ve flex-basis kombinasyonunun kısaltmasıdır. İkinci ve üçüncü parametreler (flex-shrink ve flex-basis) isteğe bağlıdır. Varsayılan `0 1 auto`'dur, ancak bunu `flex: 5;` gibi tek bir sayı değeriyle ayarlarsanız, bu flex-basis degerini %0 olarak değiştirir, yani `flex-grow: 5; flex-shrink: 1; flex-basis: %0;`. \n\n ```css\n.box {\n  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]\n}\n```",
+      question: 'Ikinci kutunun flex degerini 5 yapiniz.',
+      title: 'flex',
+      initialValue: 'div.box1 {\n  flex: 1;\n} \ndiv.box2 {\n  flex: 1;\n} \ndiv.box3 {\n  flex: 1;\n} \ndiv.box4 {\n  flex: 1;\n}',
+      readOnly: false,
+    },
+    step: 14,
+    id: nanoid(),
+  },
+  {
+    data: {
+      answer: 'div.box1 {\n  align-self: flex-start;\n} \ndiv.box2 {\n  align-self: auto;\n} \ndiv.box3 {\n  align-self: center;\n} \ndiv.box4 {\n  align-self: flex-end;\n}',
+      content: 0,
+      description: '**align-self** tek tek esnek öğeler için varsayılan hizalamanın (veya hizalama öğeleri tarafından belirtilenin) geçersiz kılınmasına izin verir. \n\n ```css\n.box {\n  align-self: auto | flex-start | flex-end | center | baseline | stretch;\n}\n```',
+      question: '1. kutunun basta, 3.kutunun ortada ve son kutunun ise sonda hizalanmasi icin `align-self` degerleri ne olmalidir ?',
+      title: 'align-self',
+      initialValue: 'div.box1 {\n  align-self: auto;\n} \ndiv.box2 {\n  align-self: auto;\n} \ndiv.box3 {\n  align-self: auto;\n} \ndiv.box4 {\n  align-self: auto;\n}',
+      readOnly: false,
+    },
+    step: 15,
+    id: nanoid(),
+  },
+  {
+    data: {
+      title: 'Tebrikler tüm adımları tamamladın!',
+      description: 'İstediğin zaman önceki adımlara dönebilir, geçtiğin tüm adımlar arasında kolayca dolaşabilirsin.',
+    },
+    step: 16,
+    isLast: true,
+    id: nanoid(),
+  },
 ];
 
 export default chapterList;
