@@ -2,9 +2,41 @@
 /* eslint-disable react/no-children-prop */
 import PropTypes from 'prop-types';
 
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'markdown-to-jsx';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import * as prism from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+const Code = ({ className, children }) => {
+  const firstIndex = /```css\n/gi.exec(children);
+  const lastIndex = /}\n```/gi.exec(children);
+  let code;
+  let codeBefore;
+  let codeAfter;
+  if (firstIndex && lastIndex) {
+    code = children.slice(firstIndex.index + firstIndex[0].length, lastIndex.index);
+    codeBefore = children.slice(0, firstIndex.index);
+    codeAfter = children.slice(lastIndex.index + lastIndex[0].length);
+    return (
+      <>
+        <ReactMarkdown>
+          {codeBefore}
+        </ReactMarkdown>
+        <SyntaxHighlighter language="css" style={prism.dracula}>
+          {code}
+        </SyntaxHighlighter>
+        <ReactMarkdown >
+          {codeAfter}
+        </ReactMarkdown>
+      </>
+    );
+  }
+  return (
+    <ReactMarkdown>
+      {children}
+    </ReactMarkdown>
+  );
+};
 
 function Markdown({ markdownText, type }) {
   if (type) {
@@ -16,29 +48,11 @@ function Markdown({ markdownText, type }) {
   }
 
   return (
-    <ReactMarkdown
-      children={markdownText}
-      components={{
-        code({
-          node, inline, className, children, ...props
-        }) {
-          const match = /language-(\w+)/.exec(className || '');
-
-          return !inline && match ? (
-            <SyntaxHighlighter
-              children={String(children).replace(/\n$/, '')}
-              style={prism.dracula}
-              language={match[1]}
-              PreTag="div"
-            />
-          ) : (
-            <code className={className} {...props}>
-              {children}
-            </code>
-          );
-        },
-      }}
-    />
+    <Code
+      className={type}
+    >
+      {markdownText}
+    </Code>
   );
 }
 
