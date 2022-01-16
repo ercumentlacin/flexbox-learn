@@ -205,7 +205,7 @@ Chapter.propTypes = {
   data: PropTypes.shape({
     answer: PropTypes.string.isRequired,
     content: PropTypes.number.isRequired,
-    description: PropTypes.element.isRequired,
+    description: PropTypes.string.isRequired,
     question: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     initialValue: PropTypes.string.isRequired,

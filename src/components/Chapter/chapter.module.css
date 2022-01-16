@@ -1,5 +1,5 @@
 .cahpterWrapper {
-  @apply flex-1 flex flex-col items-center justify-center;
+  @apply flex-1 flex flex-col items-center justify-center w-full;
   @apply px-1;
 }
 .cahpterWrapper h1 {
