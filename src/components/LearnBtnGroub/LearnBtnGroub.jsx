@@ -10,6 +10,7 @@ function LearnBtnGroub({
   isDisableNextStep,
   isError,
   isCorrect,
+  currentStep,
 }) {
   const nextButtonClass = useMemo(() => {
     let className = '';
@@ -37,6 +38,7 @@ function LearnBtnGroub({
         Önceki
       </button>
 
+      {currentStep < 16 && (
       <button
         type="button"
         onClick={onNextstep}
@@ -45,6 +47,7 @@ function LearnBtnGroub({
       >
         Sonraki
       </button>
+      )}
     </div>
   );
 }
@@ -56,6 +59,7 @@ LearnBtnGroub.propTypes = {
   isDisableNextStep: PropTypes.bool.isRequired,
   isError: PropTypes.bool.isRequired,
   isCorrect: PropTypes.bool.isRequired,
+  currentStep: PropTypes.number.isRequired,
 };
 
 export default memo(LearnBtnGroub);

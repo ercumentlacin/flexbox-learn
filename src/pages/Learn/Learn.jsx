@@ -5,11 +5,12 @@ import {
 import Chapter from '../../components/Chapter';
 import ProgressBar from '../../components/ProgressBar';
 import LearnBtnGroub from '../../components/LearnBtnGroub';
+import Completed from '../../components/Completed';
 
 import chapterList from '../../assets/data/chapterList';
 
 import styles from './learn.module.css';
-import { navigateTop } from '../../helpers/utils';
+import { getLocalStorage, navigateTop, setLocalStorage } from '../../helpers/utils';
 
 export default function Learn() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -41,6 +42,13 @@ export default function Learn() {
   );
 
   useEffect(() => {
+    const local = getLocalStorage('currentStep');
+    if (local) {
+      setCurrentStep(local);
+    }
+  }, []);
+
+  useEffect(() => {
     let isCancelled;
     if (isError) {
       isCancelled = setTimeout(() => {
@@ -58,6 +66,13 @@ export default function Learn() {
     }
   }, [isReadOnly]);
 
+  useEffect(() => {
+    setLocalStorage('currentStep', currentStep);
+    return () => {
+      setLocalStorage('currentStep', currentStep);
+    };
+  }, [currentStep]);
+
   return (
     <div className={styles.learnWrapper}>
       <ProgressBar
@@ -68,17 +83,22 @@ export default function Learn() {
       {
         chapterList
           .filter((chapter) => chapter.step === currentStep)
-          .map((chapterItem) => (
-            <Chapter
-              key={chapterItem.id}
-              {...chapterItem}
-              onChangeSuccess={onChangeSuccess}
-              onChangeError={onChangeError}
-              isCorrect={isCorrect}
-              isError={isError}
-              onChangeReadOnly={onChangeReadOnly}
-            />
-          ))
+          .map((chapterItem) => {
+            if (chapterItem.isLast) {
+              return <Completed key={chapterItem.id} {...chapterItem} />;
+            }
+            return (
+              <Chapter
+                key={chapterItem.id}
+                {...chapterItem}
+                onChangeSuccess={onChangeSuccess}
+                onChangeError={onChangeError}
+                isCorrect={isCorrect}
+                isError={isError}
+                onChangeReadOnly={onChangeReadOnly}
+              />
+            );
+          })
       }
 
       <LearnBtnGroub
@@ -88,6 +108,7 @@ export default function Learn() {
         isDisableNextStep={isDisableNextStep}
         isError={isError}
         isCorrect={isCorrect}
+        currentStep={currentStep}
       />
     </div>
   );

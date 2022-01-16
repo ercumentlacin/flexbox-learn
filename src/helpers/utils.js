@@ -20,3 +20,20 @@ export const stringToStyleObject = (string) => {
   });
   return styleObject;
 };
+
+/**
+ * @param {String} key
+ * @param {Object} value
+ */
+export const setLocalStorage = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+};
+
+/**
+ * @param {String} key
+ * @returns {Object | null}
+ */
+export const getLocalStorage = (key) => {
+  const localStorageValue = localStorage.getItem(key);
+  return JSON.parse(localStorageValue);
+};

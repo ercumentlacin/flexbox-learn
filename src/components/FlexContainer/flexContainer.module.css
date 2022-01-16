@@ -1,5 +1,6 @@
 .flexContainer {
   @apply flex flex-wrap gap-5;
+  @apply min-h-[500px];
 }
 
 .flexContainer > div {
