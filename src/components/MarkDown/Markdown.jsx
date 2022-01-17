@@ -14,7 +14,7 @@ const Code = ({ className, children }) => {
   let codeBefore;
   let codeAfter;
   if (firstIndex && lastIndex) {
-    code = children.slice(firstIndex.index + firstIndex[0].length, lastIndex.index);
+    code = children.slice(firstIndex.index + firstIndex[0].length, lastIndex.index + 1);
     codeBefore = children.slice(0, firstIndex.index);
     codeAfter = children.slice(lastIndex.index + lastIndex[0].length);
     return (
@@ -25,7 +25,7 @@ const Code = ({ className, children }) => {
         <SyntaxHighlighter language="css" style={prism.dracula}>
           {code}
         </SyntaxHighlighter>
-        <ReactMarkdown >
+        <ReactMarkdown>
           {codeAfter}
         </ReactMarkdown>
       </>
