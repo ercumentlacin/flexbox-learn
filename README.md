@@ -6,7 +6,7 @@
 - Markdown: [react-markdown](https://www.npmjs.com/package/react-markdown)
 - Syntax highlighting: [react-syntax-highlighter](https://www.npmjs.com/package/react-syntax-highlighter)
 
-## Credits
+## Credits  & Thanks
 
 [svg icons](https://drawkit.gumroad.com/l/sBrtV?recommended_by=library)
 
@@ -14,4 +14,4 @@
 
 [fatih hayrioglu](https://fatihhayrioglu.com/)
 
-[Ceyhun Enki Aksan](https://ceaksan.com)
+[regex-learn](https://regexlearn.com/)
