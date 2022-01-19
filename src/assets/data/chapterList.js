@@ -123,7 +123,7 @@ const chapterList = [
       answer: 'div.box1 {\n  order: 5;\n} \ndiv.box2 {\n  order: 2;\n} \ndiv.box3 {\n  order: 3;\n} \ndiv.box4 {\n  order: 4;\n}',
       content: 0,
       description: '**order** ile özelliklere göz atalım. order ögelerin sirasini belirlemek için kullanılır.\n\n```css\n.flex-container { \n    order: 5; /* default is 0 */ \n}\n``` \n\n',
-      question: 'Ilk kutunun en sonda ter almasi icin order değeri ne olmalıdır ?',
+      question: 'Ilk kutunun en sonda yer almasi icin order değeri ne olmalıdır ?',
       title: 'order',
       initialValue: 'div.box1 {\n  order: 1;\n} \ndiv.box2 {\n  order: 2;\n} \ndiv.box3 {\n  order: 3;\n} \ndiv.box4 {\n  order: 4;\n}',
       readOnly: false,
@@ -135,7 +135,7 @@ const chapterList = [
     data: {
       answer: 'div.box1 {\n  flex-grow: 1;\n} \ndiv.box2 {\n  flex-grow: 2;\n} \ndiv.box3 {\n  flex-grow: 1;\n} \ndiv.box4 {\n  flex-grow: 1;\n}',
       content: 0,
-      description: '**flex-grow** gerektiginde esnek bir ogenin uyume yetenegini tanimlar. Oranti islevi goren birimsiz bir deger kabul eder. \n Tum esnek ogelerin baslangis flex-grow degeri 1 olarak ayarlanmis olsada containerdaki doldurulamamis olan alan ogelere esit miktarda paylastirilir.\n\n```css\n.box {\n  flex-grow: 4; /* default 0 */\n}\n```',
+      description: '**flex-grow** gerektiginde esnek bir ogenin buyume yetenegini tanimlar. Oranti islevi goren birimsiz bir deger kabul eder. \n Tum esnek ogelerin baslangis flex-grow degeri 1 olarak ayarlanmis olsada containerdaki doldurulamamis olan alan ogelere esit miktarda paylastirilir.\n\n```css\n.box {\n  flex-grow: 4; /* default 0 */\n}\n```',
       question: 'Ikinci kutunun diger kutulara gore 2/5 kat daha fazla yer almasi icin flex-grow değeri ne olmalıdır ?',
       title: 'flex-grow',
       initialValue: 'div.box1 {\n  flex-grow: 1;\n} \ndiv.box2 {\n  flex-grow: 1;\n} \ndiv.box3 {\n  flex-grow: 1;\n} \ndiv.box4 {\n  flex-grow: 1;\n}',
