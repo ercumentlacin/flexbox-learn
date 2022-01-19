@@ -41,6 +41,10 @@
   padding-inline: 1rem;
 }
 
+.description span {
+  padding-inline: 0;
+}
+
 .content, .answer, .question {
   @apply px-6 pb-3 pt-5 rounded-md bg-zinc-800;
   @apply w-full mb-4;
@@ -84,6 +88,10 @@
 
 .editor > * {
   @apply flex-1 max-w-sm;
+}
+
+.editor > textArea {
+  @apply mr-4
 }
 
 .answerButton {

@@ -23,6 +23,16 @@ export default function Navigation() {
             </li>
           ))
         }
+        <li>
+          <a
+            href="https://github.com/ercumentlacin/flexbox-learn"
+            className={styles.nav}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            GitHub
+          </a>
+        </li>
       </ul>
     </nav>
   );

@@ -14,6 +14,7 @@ body {
 div.box {
   @apply w-20 p-2 border-2 border-black;
   @apply text-center my-2 mr-2;
+  @apply bg-fuchsia-900;
 }
 
 div.box-1 {

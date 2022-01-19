@@ -32,7 +32,7 @@ const chapterList = [
       answer: 'div.container {\n  display: flex;\n  flex-direction: column;\n}',
       content: 3,
       description: '**flex-direction** ile özelliklere göz atalım. flex-direction alt (child) elementlerin (item) yönünü belirlemek için kullanılır. Özellik, varsayılan olarak (row) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    flex-direction: row | row-reverse | column | column-reverse; \n}\n```\n\n*   **row:** Esnek kutuları soldan sağa sıralar\n* **row-reverse:** Esnek kutuları sağdan sola sıralar\n* **column:** Esnek kutuları kolon olarak yukarıdan aşağı sıralar\n*   **column-reverse:** Esnek kutuları row-reverse gibi ama alttan yukarı sıralar',
-      question: 'Esnek kutuları yukarıdan aşağı sıramak için flex-direction: değeri ne olmalıdır ?',
+      question: 'Esnek kutuları yukarıdan aşağı sıramak için flex-direction değeri ne olmalıdır ?',
       title: 'flex-direction',
       initialValue: 'div.container {\n  display: flex;\n  flex-direction: ;\n}',
       readOnly: false,
@@ -44,7 +44,7 @@ const chapterList = [
     data: {
       answer: 'div.container {\n  display: flex;\n  flex-wrap: wrap;\n}',
       content: 20,
-      description: 'Ön tanımlı flex-wrap değeri: nowrap olup esnek kutuları tek bir satırda sıralanmasını saglar. Eğer esnek kutuları bir kaç satırda sıralamak isterseniz, flex-wrap değerini "wrap" olarak değiştirebilirsiniz. \n\n ```css\n.flex-container {\n    flex-wrap: nowrap | wrap | wrap-reverse;\n}\n```\n*   **nowrap**: Container içerisindeki tüm item’ları tek bir satıra sığacak şekilde, yan yana konumlandırır. Varsayılan seçenektir.\n*   **wrap**: Item’lar gerektiğinde alt satırlara yukarıdan aşağıya doğru sıralanırlar.\n*   **wrap-reverse**: Item’lar gerektiğinde alt satırlara aşağıdan yukarıya doğru sıralanırlar.',
+      description: 'Ön tanımlı flex-wrap değeri: `nowrap` olup esnek kutuları tek bir satırda sıralanmasını saglar. Eğer esnek kutuları bir kaç satırda sıralamak isterseniz, flex-wrap değerini `wrap` olarak değiştirebilirsiniz.\n\n```css\n.flex-container {\n    flex-wrap: nowrap | wrap | wrap-reverse;\n}\n```\n*   **nowrap**: Container içerisindeki tüm item’ları tek bir satıra sığacak şekilde, yan yana konumlandırır. Varsayılan seçenektir.\n*   **wrap**: Item’lar gerektiğinde alt satırlara yukarıdan aşağıya doğru sıralanırlar.\n*   **wrap-reverse**: Item’lar gerektiğinde alt satırlara aşağıdan yukarıya doğru sıralanırlar.',
       question: 'Esnek kutuları bir kaç satırda sıralamak isterseniz, flex-wrap değerini ne olmalıdır?',
       title: 'flex-wrap',
       initialValue: 'div.container {\n  display: flex;\n  flex-wrap: ;\n}',
@@ -57,7 +57,7 @@ const chapterList = [
     data: {
       answer: 'div.container {\n  display: flex;\n  flex-flow: row wrap-reverse;\n}',
       content: 20,
-      description: 'flex-flow değeri, flex-direction ve flex-wrap özelliklerinin birleşimi olarak tanımlanır.\n\n```css\n.flex-container {\n    flex-flow: row wrap-reverse;\n}\n```\n*   **row:** Esnek kutuları soldan sağa sıralar\n*   **row-reverse:** Esnek kutuları sağdan sola sıralar\n*   **column:** Esnek kutuları kolon olarak yukarıdan aşağı sıralar\n*   **column-reverse:** Esnek kutuları row-reverse gibi ama alttan yukarı sıralar\n*   **wrap:** Item’lar gerektiğinde alt satırlara yukarıdan aşağıya doğru sıralanırlar.\n*   **wrap-reverse:** Item’lar gerektiğinde alt satırlara aşağıdan yukarıya doğru sıralanırlar.',
+      description: '**flex-flow** değeri, flex-direction ve flex-wrap özelliklerinin birleşimi olarak tanımlanır.\n\n```css\n.flex-container {\n    flex-flow: row wrap-reverse;\n}\n```\n*   **row:** Esnek kutuları soldan sağa sıralar\n*   **row-reverse:** Esnek kutuları sağdan sola sıralar\n*   **column:** Esnek kutuları kolon olarak yukarıdan aşağı sıralar\n*   **column-reverse:** Esnek kutuları row-reverse gibi ama alttan yukarı sıralar\n*   **wrap:** Item’lar gerektiğinde alt satırlara yukarıdan aşağıya doğru sıralanırlar.\n*   **wrap-reverse:** Item’lar gerektiğinde alt satırlara aşağıdan yukarıya doğru sıralanırlar.',
       question: '',
       title: 'flex-flow',
       initialValue: 'div.container {\n  display: flex;\n  flex-flow: row wrap-reverse;\n}',
@@ -70,8 +70,8 @@ const chapterList = [
     data: {
       answer: 'div.container {\n  display: flex;\n  align-items: center;\n}',
       content: 3,
-      description: '**align-items** ile özelliklere göz atalım. align-items alt (child) elementlerin (item) yönünü belirlemek için kullanılır. Özellik, varsayılan olarak (stretch) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    align-items: flex-start | flex-end | center | baseline | stretch; \n}\n``` \n\n *   **flex-start:** Esnek kutuların sola yatayda yerleştirilmesi\n*   **flex-end:** Esnek kutuların sağa yatayda yerleştirilmesi\n*   **center:** Esnek kutuların ortaya yatayda yerleştirilmesi\n*   **baseline:** Esnek kutuların ortaya yatayda yerleştirilmesi\n*   **stretch:** Esnek kutuların yatayda yerleştirilmesi',
-      question: 'Esnek kutuları yatayda yerleştirmek için align-items değeri ne olmalıdır?',
+      description: '**align-items** ile özelliklere göz atalım. align-items alt (child) elementleri (item) dikeyde (flex-direction: row yada row-reverse ise `dikeyde` degilse `yatayda`) hizalamak icin kullanılır. Özellik, varsayılan olarak (stretch) yerleşimi dikeyde gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    align-items: flex-start | flex-end | center | baseline | stretch; \n}\n```\n\n*   **flex-start:** Esnek kutuların sola yatayda yerleştirilmesi\n*   **flex-end:** Esnek kutuların sağa yatayda yerleştirilmesi\n*   **center:** Esnek kutuların ortaya yatayda yerleştirilmesi\n*   **baseline:** Esnek kutuların ortaya yatayda yerleştirilmesi\n*   **stretch:** Esnek kutuların yatayda yerleştirilmesi',
+      question: 'Esnek kutuları dikeyde ortalamak için align-items değeri ne olmalıdır ?',
       title: 'align-items',
       initialValue: 'div.container {\n  display: flex;\n  align-items: ;\n}',
       readOnly: false,
@@ -83,8 +83,8 @@ const chapterList = [
     data: {
       answer: 'div.container {\n  display: flex;\n  justify-content: center;\n}',
       content: 3,
-      description: '**justify-content** ile özelliklere göz atalım. justify-content alt (child) elementlerin (item) yönünü belirlemek için kullanılır. Özellik, varsayılan olarak (flex-start) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly; \n}\n``` \n\n*   **flex-start:** Esnek kutuları soldan sağa sıralar\n*   **flex-end:** Esnek kutuları sağdan sola sıralar\n*   **center:** Esnek kutuları ortalar\n*   **space-between:** Esnek kutuları arasında boşluk bırakır\n*   **space-around:** Esnek kutuları ortalar ve arasında boşluk bırakır\n*   **space-evenly:** Esnek kutuları ortalar ve arasında boşluk bırakır',
-      question: 'Esnek kutuları ortalamak için justify-content değeri ne olmalıdır ?',
+      description: '**justify-content** ile özelliklere göz atalım. justify-content alt (child) elementleri (item) yatayda (flex-direction: row yada row-reverse ise `yatayda` degilse `dikeyde`) hizalamak icin kullanılır. Özellik, varsayılan olarak (flex-start) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly; \n}\n``` \n\n*   **flex-start:** Esnek kutuları soldan sağa sıralar\n*   **flex-end:** Esnek kutuları sağdan sola sıralar\n*   **center:** Esnek kutuları ortalar\n*   **space-between:** Esnek kutuları arasında boşluk bırakır\n*   **space-around:** Esnek kutuları ortalar ve arasında boşluk bırakır\n*   **space-evenly:** Esnek kutuları ortalar ve arasında boşluk bırakır',
+      question: 'Esnek kutuları yatayda ortalamak için justify-content değeri ne olmalıdır ?',
       title: 'justify-content',
       initialValue: 'div.container {\n  display: flex;\n  justify-content: ;\n}',
       readOnly: false,
@@ -94,12 +94,12 @@ const chapterList = [
   },
   {
     data: {
-      answer: 'div.container {\n  display: flex;\n flex-wrap: wrap;\n align-content: center;\n}',
+      answer: 'div.container {\n display: flex;\n flex-wrap: wrap;\n align-content: center;\n}',
       content: 20,
-      description: '**align-content** ile özelliklere göz atalım. align-content alt (child) elementlerin (item) yönünü belirlemek için kullanılır. Özellik, varsayılan olarak (stretch) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    align-content: flex-start | flex-end | center | baseline | stretch; \n}\n``` \n\n *   **flex-start:** Esnek kutuların sola yatayda yerleştirilmesi\n*   **flex-end:** Esnek kutuların sağa yatayda yerleştirilmesi\n*   **center:** Esnek kutuların ortaya yatayda yerleştirilmesi\n*   **baseline:** Esnek kutuların ortaya yatayda yerleştirilmesi\n*   **stretch:** Esnek kutuların yatayda yerleştirilmesi',
+      description: '**align-content** ile özelliklere göz atalım. align-content alt (child) elementleri dikeyde hizalamak icin kullanılır, uygulayabilmek icin birden fazla satir olmalidir.\n\n```css\n.flex-container { \n    align-content: flex-start | flex-end | center | baseline | stretch; \n}\n```\n\n*   **flex-start:** Esnek kutuların sola yatayda yerleştirilmesi\n*   **flex-end:** Esnek kutuların sağa yatayda yerleştirilmesi\n*   **center:** Esnek kutuların ortaya yatayda yerleştirilmesi\n*   **baseline:** Esnek kutuların ortaya yatayda yerleştirilmesi\n*   **stretch:** Esnek kutuların yatayda yerleştirilmesi',
       question: '',
       title: 'align-content',
-      initialValue: 'div.container {\n  display: flex;\n flex-wrap: wrap;\n align-content: center;\n}',
+      initialValue: 'div.container {\n display: flex;\n flex-wrap: wrap;\n align-content: center;\n}',
       readOnly: true,
     },
     step: 8,
@@ -109,7 +109,7 @@ const chapterList = [
     data: {
       answer: 'div.container {\n display: flex;\n flex-wrap: wrap;\n gap: 50px;\n}',
       content: 20,
-      description: '**gap** ile özelliklere göz atalım. gap alt (child) elementlerin (item) yönünü belirlemek için kullanılır. Özellik, varsayılan olarak (0) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    gap: 5px; \n}\n``` \n\n *   **0:** Esnek kutuların arasında boşluk bırakır\n*   **20px:** Esnek kutuların arasında boşluk bırakır\n*   **30px:** Esnek kutuların arasında boşluk bırakır\n*   **40px:** Esnek kutuların arasında boşluk bırakır\n*   **50px:** Esnek kutuların arasında boşluk bırakır',
+      description: '**gap** ile özelliklere göz atalım. gap alt (child) elementlerin (item) arasindaki boslugu belirlemek için kullanılır.\n\n```css\n.flex-container { \n  gap: 10px;\n  gap: 10px 20px; /* row-gap column gap */\n  row-gap: 10px;\n  column-gap: 20px; \n}\n```\n\n',
       question: "Esnek kutuların arasında 50px'lik boşluk bırakılması için gap değeri ne olmalıdır ?",
       title: 'gap, row-gap, column-gap',
       initialValue: 'div.container {\n display: flex;\n flex-wrap: wrap;\n gap: ;\n}',
@@ -122,7 +122,7 @@ const chapterList = [
     data: {
       answer: 'div.box1 {\n  order: 5;\n} \ndiv.box2 {\n  order: 2;\n} \ndiv.box3 {\n  order: 3;\n} \ndiv.box4 {\n  order: 4;\n}',
       content: 0,
-      description: '**order** ile özelliklere göz atalım. order alt (child) elementlerin (item) yönünü belirlemek için kullanılır. Özellik, varsayılan olarak (0) yerleşimi yatayda gerçekleştirir. Özellik ayrıca farklı davranışlar için farklı seçenekler sunmaktadır.\n\n```css\n.flex-container { \n    order: 1; \n}\n``` \n\n',
+      description: '**order** ile özelliklere göz atalım. order ögelerin sirasini belirlemek için kullanılır.\n\n```css\n.flex-container { \n    order: 5; /* default is 0 */ \n}\n``` \n\n',
       question: 'Ilk kutunun en sonda ter almasi icin order değeri ne olmalıdır ?',
       title: 'order',
       initialValue: 'div.box1 {\n  order: 1;\n} \ndiv.box2 {\n  order: 2;\n} \ndiv.box3 {\n  order: 3;\n} \ndiv.box4 {\n  order: 4;\n}',
