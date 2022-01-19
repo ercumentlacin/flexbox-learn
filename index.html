@@ -17,19 +17,24 @@
           );
         }
       }(window.location))
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
 
-    <script type="module">
+      
+    </script>
+
+    <script type="module" defer>
       import RefreshRuntime from 'http://localhost:3000/@react-refresh'
       RefreshRuntime.injectIntoGlobalHook(window)
       window.$RefreshReg$ = () => {}
       window.$RefreshSig$ = () => (type) => type
       window.__vite_plugin_react_preamble_installed__ = true
     </script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+  
 
   </body>
 </html>
