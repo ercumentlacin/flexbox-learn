@@ -9,6 +9,9 @@
 ## Credits
 
 [svg icons](https://drawkit.gumroad.com/l/sBrtV?recommended_by=library)
+
 [css-tricks](https://css-tricks.com)
-[fatih hayrioglu](fatihhayrioglu.com)
-[Ceyhun Enki Aksan](ceaksan.com)
+
+[fatih hayrioglu](https://fatihhayrioglu.com/)
+
+[Ceyhun Enki Aksan](https://ceaksan.com)
