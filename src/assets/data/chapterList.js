@@ -161,7 +161,7 @@ const chapterList = [
     data: {
       answer: 'div.box1 {\n  flex-basis: 100px;\n} \ndiv.box2 {\n  flex-basis: 500px;\n} \ndiv.box3 {\n  flex-basis: 100px;\n} \ndiv.box4 {\n  flex-basis: 100px;\n}',
       content: 0,
-      description: '**flex-basis** doldurulmayan alan dagiltilmadan once ogrenin varsayılan boyutunu belirler. Bir uzunluk (ör. %20, 5rem vb.) veya bir anahtar kelime olabilir. \n\n ```css\n.box {\n  flex-basis: 20%; /* default auto */\n}\n```',
+      description: '**flex-basis** doldurulmayan alan dagiltilmadan once ogenin varsayılan boyutunu belirler. Bir uzunluk (ör. %20, 5rem vb.) veya bir anahtar kelime olabilir. \n\n ```css\n.box {\n  flex-basis: 20%; /* default auto */\n}\n```',
       question: 'Ikinci kutunun maksimum boyutunu 500px olabilmesi icin flex-basis degerini 500px yapiniz.',
       title: 'flex-basis',
       initialValue: 'div.box1 {\n  flex-basis: 100px;\n} \ndiv.box2 {\n  flex-basis: 100px;\n} \ndiv.box3 {\n  flex-basis: 100px;\n} \ndiv.box4 {\n  flex-basis: 100px;\n}',
